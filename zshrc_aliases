@@ -1,0 +1,47 @@
+# some more ls aliases
+# Arquivo atrelado ao .zshrc
+# Necessário inserir o loop abaixo ao final no arquivo .zshrc 
+#
+#  if [ -f ~/.bash_aliases ]; then
+#     . ~/.bash_aliases
+# fi
+
+# Listagem diretórios
+alias ls='exa --icons'
+alias l='exa --icons'
+alias la='exa --icons -a'
+alias ll='exa --icons -l'
+
+# Atualização de diretórios
+alias update='sudo apt update -y'
+alias upgrade='sudo apt upgrade -y'
+alias install='sudo apt install'
+alias upd='sudo apt update && sudo apt upgrade -y'
+
+# Gestão sistema operacional
+alias clean='sudo apt autoclean -y'
+alias off='sudo init 0'
+alias rb='reboot'
+alias cl='clear'
+alias ..='cd ..'
+alias rs='reset'
+alias rm='rm -rf'
+alias nf='neofetch'
+alias cat='batcat'
+alias ips='ip -c -br a'
+alias p='pgrep'
+alias gh='history|grep'
+alias mkdir='mkdir -p'
+alias ports='sudo netstat -tulanp'
+alias filesize='du -sh * | sort -h'
+alias htop='bashtop'
+
+# Gestão pacotes Snaps
+alias snapi='sudo snap install'
+
+# Gestão pacotes Flatpaks
+alias flatpaki='sudo flatpak install'
+alias flatpakl='flatpak list'
+alias flatpakrm='flatpak remove'
+alias flatpakup='flatpak update -y'
+

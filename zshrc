@@ -77,11 +77,10 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-
-
 plugins=(
   git
   zsh-autosuggestions
+  zsh-syntax-highlighting
   fzf
   asdf
   composer
@@ -124,7 +123,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source /home/allan/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source ~/powerlevel10k/powerlevel10k.zsh-theme
@@ -132,22 +130,11 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# some more ls aliases
-alias ls='exa --icons'
-alias l='exa --icons'
-alias la='exa --icons -a'
-alias ll='exa --icons -l'
-alias cl='clear'
-alias update='sudo apt update'
-alias upgrade='sudo apt upgrade -y'
-alias ..='cd ..'
-alias rs='reset'
-alias upd='sudo apt update && sudo apt upgrade -y'
-alias nf='neofetch'
-alias install='sudo apt install'
-alias rb='reboot'
-alias off='sudo init 0'
-alias rm='rm -rf'
-alias clean='sudo apt autoclean'
-alias snapi='sudo snap install'
-alias flatpaki='sudo flatpak install'
+. "$HOME/.asdf/asdf.sh"
+
+if [ -f ~/.zshrc_aliases ]; then
+    . ~/.zshrc_aliases
+fi
+
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
